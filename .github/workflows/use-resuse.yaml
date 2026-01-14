@@ -67,6 +67,8 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/reusable.yaml
+    with:
+        artifact_name: input to reuse
   report:
     if: failure()
     needs: [lint,deploy]
